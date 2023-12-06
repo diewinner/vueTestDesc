@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Forum', serif;
+}
+
+.wrapper_component {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.main_container {
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0.7511379551820728) 50%, rgba(0,0,0,1) 100%);
+}
