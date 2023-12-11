@@ -1,13 +1,14 @@
 <template>
   <div class="inputChecked-item">
-    <input type="radio" :id="id" :name="nameInput" :value="value" v-model="selected" @change="handleChange" />
+    <input type="radio" :id="id" :name="id"  :value="value" v-model="selected"
+           @click="handleChange" />
     <label :for="id">{{ value }}</label>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['id', 'value', 'nameInput'],
+  props: ['id', 'value', 'nameInput','index'],
   computed: {
     selected: {
       get() {
@@ -21,7 +22,8 @@ export default {
   methods: {
     handleChange() {
       this.$store.dispatch('changeSelected');
-    }
+    },
+
   }
 };
 </script>
@@ -33,6 +35,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 input {
   appearance: none;
   border-radius: 50%;
@@ -40,8 +43,10 @@ input {
   height: 17px;
   border: 1px solid #000;
   margin-right: 5px;
+
   &:checked {
     position: relative;
+
     &::before {
       content: '';
       border-radius: 50%;
@@ -52,7 +57,8 @@ input {
       top: 2px;
       left: 2px;
     }
-    border:2px solid #000;
+
+    border: 2px solid #000;
   }
 }
 

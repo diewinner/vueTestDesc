@@ -7,5 +7,17 @@
     </g>
   </svg>
 </template>
+<style>
+svg {
+  transition: all .2s ease;
+  g {
+    path {
+      &:hover {
+        fill: #BB945F;
+      }
+    }
+  }
+}
+</style>
 
 

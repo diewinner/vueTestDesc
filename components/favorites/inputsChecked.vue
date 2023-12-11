@@ -2,10 +2,12 @@
   <div class="inputs_checked">
     <span class="inputs_checked__text">Pick favorites of season</span>
     <div class="inputs_container">
-      <input-checked-item v-for="input in inputs"
+      <input-checked-item v-for="(input, index) in inputs"
+                          :key="input.id"
                           :id="input.id"
                           :value="input.value"
                           :nameInput="nameInput"
+                          :index="index"
       />
     </div>
   </div>
@@ -13,11 +15,11 @@
 
 <script>
 export default {
-  props:['inputs', 'nameInput']
+  props: ['inputs', 'nameInput']
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .inputs_checked {
   display: flex;
   flex-direction: column;

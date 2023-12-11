@@ -18,5 +18,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  min-width: 435px;
 }
 </style>

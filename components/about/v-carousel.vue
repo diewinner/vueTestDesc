@@ -1,5 +1,5 @@
 <template>
-  <carousel perPage="3" paginationColor="#0c0c0e" paginationActiveColor="#bb945f" paginationSize="16">
+  <carousel  perPage="3" paginationColor="#0c0c0e" paginationActiveColor="#bb945f" minSwipeDistance="2" paginationSize="16">
     <slide v-for="slide in sliderItems" :key="slide.id">
       <v-carousel-item :src="slide.img" :name="slide.name"/>
     </slide>

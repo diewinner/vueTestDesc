@@ -1,10 +1,11 @@
 <template>
   <div class="inputChecked-item-content">
-    <div  v-for="content in inputsContent">
-      <input-checked-item-content-item  :key="content.bookName"
-                                        :bookName="content.bookName"
-                                        :author="content.author"
-                                        :imgSrc="content.img"/>
+    <div v-for="content in inputsContent">
+      <inputChecked-item-content-item :key="content.bookName"
+                                      :bookName="content.bookName"
+                                      :author="content.author"
+                                      :description="content.description"
+                                      :imgSrc="content.img"/>
     </div>
   </div>
 </template>

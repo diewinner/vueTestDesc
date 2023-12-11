@@ -1,19 +1,18 @@
 <template>
   <div class="favorites wrapper_component">
-    <p>выбран:{{ getSelected}}</p>
     <title-component :title="title"/>
     <inputs-checked :inputs="inputs"
                     :nameInput="nameInput"
     />
-    <input-checked-item-content  :inputsContent="inputsContent"/>
+    <input-checked-item-content :inputsContent="filterContent"/>
   </div>
 </template>
 
 <script>
 export default {
-  computed:{
-    getSelected() {
-      return this.$store.getters.getSelected
+  computed: {
+    filterContent() {
+      return this.inputsContent.filter(el => el.season === this.$store.getters.getSelected)
     }
   },
   data() {
@@ -162,6 +161,9 @@ export default {
 
 <style lang="scss" scoped>
 .favorites {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   background: #FFFFFF;
 }
 </style>

@@ -16,10 +16,8 @@
 
 <script>
 
-import ProfileSvg from "~/components/icons/profileSvg.vue";
 
 export default {
-  components: {ProfileSvg},
   data() {
     return {
       arr: ['About', 'Favorites', 'Coffee shop', 'Contacts', 'Library Card']
@@ -65,5 +63,9 @@ export default {
   font-family: "Inter", sans-serif;
   line-height: 50px;
   cursor: pointer;
+  transition: all .2s ease;
+  &:hover {
+    color:#BB945F;
+  }
 }
 </style>

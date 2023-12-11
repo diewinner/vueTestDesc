@@ -1,5 +1,5 @@
 export const state = () => ({
-  selected: null
+  selected: 'не выбрано'
 });
 
 export const mutations = {

@@ -2,7 +2,7 @@
   <div class="position">
     <div class="position__text">{{pos}}</div>
     <div class="line_between"></div>
-    <div class="position__text">${{price}}</div>
+    <div class="position__text__price">${{price}}</div>
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default {
     font-size: 20px;
     line-height: 40px;
     letter-spacing: 2px;
+    min-width: 212px;
+    &__price {
+      @extend .position__text;
+      min-width: 50px;
+    }
   }
 }
 .line_between {

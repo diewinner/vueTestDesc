@@ -1,5 +1,5 @@
 <template>
-  <div class="footer flex_column">
+  <div class="footer flex_column wrapper_component_footer">
     <div class="footer__main_info">
       <div class="footer__main_info__contact flex_column">
         <div class="footer__main_info__contact__text">286 Cadman Plaza, New York, NY 11238, United States</div>
@@ -11,11 +11,11 @@
       </div>
       <div class="footer__main_info__time flex_column">
         <div class="footer__main_info__time__item">
-          Mon - Fri
+          Mon - Fri <br>
           08:00 am - 07:00 pm
         </div>
         <div class="footer__main_info__time__item">
-          Sat - Sun
+          Sat - Sun <br>
           10:00 am - 06:00 pm
         </div>
       </div>
@@ -35,6 +35,7 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
+
 .flex_column {
   display: flex;
   flex-direction: column;
@@ -52,6 +53,7 @@ export default {}
       gap: 18px;
 
       &__text {
+        max-width: 229px;
         color: #FFF;
         font-family: "Inter", sans-serif;
         font-size: 15px;
@@ -68,26 +70,27 @@ export default {}
       gap: 10px;
 
       &__item {
-        color: #FFF;
         text-align: right;
+        max-width: 149px;
+        color: #FFF;
         font-family: "Inter", sans-serif;
         font-size: 15px;
         line-height: 20px;
       }
     }
+  }
 
-    &__author {
-      display: flex;
-      justify-content: space-between;
+  &__author {
+    display: flex;
+    justify-content: space-between;
 
-      &__item {
-        color: #FFF;
-        text-align: center;
-        font-family: "Inter", sans-serif;
-        font-size: 20px;
-        line-height: 20px;
-        letter-spacing: 2px;
-      }
+    &__item {
+      color: #FFF;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 2px;
     }
   }
 
