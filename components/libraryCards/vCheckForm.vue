@@ -1,22 +1,35 @@
 <template>
   <div class="form flex_column">
     <div class="form__content flex_column">
-      <span class="form__content__title">Brooklyn Public Library</span>
+      <span class="form__content__title">{{ this.subtitle }}</span>
       <div class="form__content__inputs_container flex_column">
-        <v-check-form-input v-for="placeholder in placeholders" :placeholder="placeholder"/>
+        <vCheckFormInput v-for="placeholder in placeholders" :placeholder="placeholder"/>
       </div>
     </div>
-    <v-button class="form__button" :text="btnText"/>
+    <vButton class="form__button" :text="btnText"/>
   </div>
 </template>
 
 <script>
+import VCheckFormInput from "@/components/libraryCards/vCheckFormInput.vue";
+import VButton from "@/components/vButton.vue";
+
 export default {
-  props: ['title', 'subtitle'],
+  components: {VButton, VCheckFormInput},
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+    subtitle: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
     return {
       btnText: 'Check the card',
-      placeholders:['Reader\'s name','Card number']
+      placeholders: ['Reader\'s name', 'Card number']
     }
   }
 }
@@ -32,10 +45,12 @@ export default {
   border: 3px solid #BB945F;
   padding: 20px 20px 30px 20px;
   gap: 20px;
+
   &__content {
     background: #BB945F;
     gap: 20px;
     padding: 20px 20px 25px 20px;
+
     &__title {
       color: #000;
       font-size: 30px;

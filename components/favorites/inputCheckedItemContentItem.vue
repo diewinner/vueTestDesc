@@ -10,15 +10,19 @@
         </div>
         <div class="description">{{ description }}</div>
       </div>
-      <v-button class="favorites_btn" :text="textBtn" :click="toggleModal"/>
+      <vButton class="favorites_btn" :text="textBtn" @btnClick="toggleModal"/>
     </div>
     <img :src=imgSrc :alt=bookName class="content-img">
-    <buy-card-modal v-show="isShowModal" :click="toggleModal"/>
+    <buyCardModal v-show="isShowModal" @closeModal="toggleModal"/>
   </div>
 </template>
 
 <script>
+import BuyCardModal from "@/components/modals/buyCardModal.vue";
+import VButton from "@/components/vButton.vue";
+
 export default {
+  components: {VButton, BuyCardModal},
   data() {
     return {
       textBtn: 'Buy',

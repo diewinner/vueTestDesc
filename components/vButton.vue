@@ -6,7 +6,17 @@
 
 <script>
 export default {
-  props:['text', 'click']
+  props: {
+    text: {
+      type: String,
+      default:''
+    }
+  },
+  methods: {
+    click() {
+      this.$emit('btnClick')
+    }
+  }
 }
 </script>
 

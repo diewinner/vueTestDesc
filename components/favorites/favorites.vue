@@ -1,22 +1,33 @@
 <template>
   <div class="favorites wrapper_component">
-    <title-component :title="title"/>
-    <inputs-checked :inputs="inputs"
-                    :nameInput="nameInput"
+    <titleComponent :title="title"/>
+    <inputsChecked :inputs="inputs"
+                   :nameInput="nameInput"
+                   @toggleInputCheck="filterContent"
     />
-    <input-checked-item-content :inputsContent="filterContent"/>
+    <inputCheckedItemContent :inputsContent="content"/>
   </div>
 </template>
 
 <script>
+import TitleComponent from "@/components/titleComponent.vue";
+import InputsChecked from "@/components/favorites/inputsChecked.vue";
+import InputCheckedItemContent from "@/components/favorites/inputCheckedItemContent.vue";
+
 export default {
-  computed: {
-    filterContent() {
-      return this.inputsContent.filter(el => el.season === this.$store.getters.getSelected)
+  components: {InputCheckedItemContent, InputsChecked, TitleComponent},
+  methods: {
+    filterContent(isChecked, idx) {
+      console.log(this.inputsContent.filter(el => el.id === idx))
+      return this.content = this.inputsContent.filter(el => el.id === idx)
     }
+  },
+  mounted() {
+    this.content = this.inputsContent.filter(el => el.id === 0)
   },
   data() {
     return {
+      content: [],
       title: 'favorites',
       nameInput: 'season',
       inputs: [
@@ -39,6 +50,7 @@ export default {
       ],
       inputsContent: [
         {
+          id: 0,
           season: 'winter',
           bookName: 'The Book Eaters',
           author: 'By Sunyi Dean',
@@ -46,6 +58,7 @@ export default {
           img: 'book_w_1.png'
         },
         {
+          id: 0,
           season: 'winter',
           bookName: 'Cackle',
           author: 'By Rachel Harrison',
@@ -53,6 +66,7 @@ export default {
           img: 'book_w_2.png'
         },
         {
+          id: 0,
           season: 'winter',
           bookName: 'Dante: Poet of the Secular World',
           author: 'By Erich Auerbach',
@@ -60,6 +74,7 @@ export default {
           img: 'book_w_3.png'
         },
         {
+          id: 0,
           season: 'winter',
           bookName: 'The Last Queen',
           author: 'By Clive Irving',
@@ -68,6 +83,7 @@ export default {
         },
 
         {
+          id: 1,
           season: 'spring',
           bookName: 'The Body',
           author: 'By Stephen King',
@@ -75,6 +91,7 @@ export default {
           img: 'book_sp_1.png'
         },
         {
+          id: 1,
           season: 'spring',
           bookName: 'Carry: A Memoir of Survival on Stolen Land',
           author: 'By Toni Jenson',
@@ -82,6 +99,7 @@ export default {
           img: 'book_sp_2.png'
         },
         {
+          id: 1,
           season: 'spring',
           bookName: 'Days of Distraction',
           author: 'By Alexandra Chang',
@@ -89,6 +107,7 @@ export default {
           img: 'book_sp_3.png'
         },
         {
+          id: 1,
           season: 'spring',
           bookName: 'Dominicana',
           author: 'By Angie Cruz',
@@ -97,6 +116,7 @@ export default {
         },
 
         {
+          id: 2,
           season: 'summer',
           bookName: 'Crude: A Memoir',
           author: 'By Pablo Fajardo & Sophie Tardy-Joubert',
@@ -104,6 +124,7 @@ export default {
           img: 'book_s_1.png'
         },
         {
+          id: 2,
           season: 'summer',
           bookName: 'Let My People Go Surfing',
           author: 'By Yvon Chouinard',
@@ -111,6 +132,7 @@ export default {
           img: 'book_s_2.png'
         },
         {
+          id: 2,
           season: 'summer',
           bookName: 'The Octopus Museum: Poems',
           author: 'By Brenda Shaughnessy',
@@ -118,6 +140,7 @@ export default {
           img: 'book_s_3.png'
         },
         {
+          id: 2,
           season: 'summer',
           bookName: 'Shark Dialogues: A Novel',
           author: 'By Kiana Davenport',
@@ -126,6 +149,7 @@ export default {
         },
 
         {
+          id: 3,
           season: 'autumn',
           bookName: 'Casual Conversation',
           author: 'By Renia White',
@@ -133,6 +157,7 @@ export default {
           img: 'book_a_1.png'
         },
         {
+          id: 3,
           season: 'autumn',
           bookName: 'The Great Fire',
           author: 'By Lou Ureneck',
@@ -140,6 +165,7 @@ export default {
           img: 'book_a_2.png'
         },
         {
+          id: 3,
           season: 'autumn',
           bookName: 'Rickey: The Life and Legend',
           author: 'By Howard Bryant',
@@ -147,6 +173,7 @@ export default {
           img: 'book_a_3.png'
         },
         {
+          id: 3,
           season: 'autumn',
           bookName: 'Slug: And Other Stories',
           author: 'By Megan Milks',

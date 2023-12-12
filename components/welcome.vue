@@ -1,12 +1,16 @@
 <template>
   <div class="welcome_container wrapper_component">
-    <header-page/>
+    <headerPage/>
     <div class="welcome_block">welcome to the brooklyn library</div>
   </div>
 </template>
 
 <script>
-export default {}
+import HeaderPage from "@/components/header/headerPage.vue";
+
+export default {
+  components: {HeaderPage}
+}
 </script>
 
 <style lang="scss" scoped>

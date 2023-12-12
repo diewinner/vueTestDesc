@@ -4,9 +4,9 @@
       <div class="footer__main_info__contact flex_column">
         <div class="footer__main_info__contact__text">286 Cadman Plaza, New York, NY 11238, United States</div>
         <div class="footer__main_info__contact__icons">
-          <twitter-svg/>
-          <instagram-svg/>
-          <facebook-svg/>
+          <twitterSvg/>
+          <instagramSvg/>
+          <facebookSvg/>
         </div>
       </div>
       <div class="footer__main_info__time flex_column">
@@ -31,7 +31,13 @@
 </template>
 
 <script>
-export default {}
+import TwitterSvg from "@/components/icons/twitterSvg.vue";
+import InstagramSvg from "@/components/icons/instagramSvg.vue";
+import FacebookSvg from "@/components/icons/facebookSvg.vue";
+
+export default {
+  components: {FacebookSvg, InstagramSvg, TwitterSvg}
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,16 +1,18 @@
 <template>
   <div class="about_container wrapper_component">
-    <title-component :title="title"/>
-    <sub-title-component :subtitle="subtitle" class="margin_subtitle"/>
-    <v-carousel :sliderItems="sliderItems"/>
+    <titleComponent :title="title"/>
+    <subTitleComponent :subtitle="subtitle" class="margin_subtitle"/>
+    <vCarousel :sliderItems="sliderItems"/>
   </div>
 </template>
 
 <script>
-import VCarousel from "@/components/about/v-carousel.vue";
+import VCarousel from "@/components/about/vCarousel.vue";
+import SubTitleComponent from "@/components/subTitleComponent.vue";
+import TitleComponent from "@/components/titleComponent.vue";
 
 export default {
-  components: {VCarousel},
+  components: {TitleComponent, SubTitleComponent, VCarousel},
   data() {
     return {
       title: 'about',

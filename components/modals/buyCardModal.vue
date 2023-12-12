@@ -1,28 +1,28 @@
 <template>
   <transition name="modal_fade">
-    <div class="modal-wrapper" @click="click">
+    <div class="modal-wrapper" @click="close">
       <div class="modal" @click.stop.prevent="clickInsideModal">
         <div class="modal_header">
         <span>
           Buy a library card
         </span>
-          <div class="close_btn" @click="click">
-            <close-svg/>
+          <div class="close_btn" @click="close">
+            <closeSvg/>
           </div>
         </div>
         <div class="modal_content">
           <div class="modal_content__form">
             <div class="modal_content__form__card">
-              <input-modal :nameInput="nameInput1" :name="name1"/>
+              <inputModal :nameInput="nameInput1" :name="name1"/>
               <label class="label_expiration" for="expiration">Expiration code</label>
               <div class="expiration_input">
                 <input type="text" name="expiration" class="modal_input">
                 <input type="text" name="expiration" class="modal_input">
               </div>
-              <input-modal :nameInput="nameInput2" :name="name2" class="cvc_input"/>
+              <inputModal :nameInput="nameInput2" :name="name2" class="cvc_input"/>
             </div>
             <div class="modal_content__form__holder">
-              <input-modal :nameInput="input.nameInput" :name="input.name" v-for="input in inputs" :key="input.name"/>
+              <inputModal :nameInput="input.nameInput" :name="input.name" v-for="input in inputs" :key="input.name"/>
             </div>
           </div>
           <div class="modal_content__description">If you are live, work, attend school, or pay property taxes in New York
@@ -36,8 +36,11 @@
 </template>
 
 <script>
+import InputModal from "@/components/modals/inputModal.vue";
+import CloseSvg from "@/components/icons/closeSvg.vue";
+
 export default {
-  props: ['click'],
+  components: {CloseSvg, InputModal},
   data() {
     return {
       nameInput1: 'Bank card number',
@@ -63,6 +66,9 @@ export default {
   methods: {
     clickInsideModal(event) {
       event.stopPropagation();
+    },
+    close() {
+      this.$emit('closeModal')
     }
   }
 }

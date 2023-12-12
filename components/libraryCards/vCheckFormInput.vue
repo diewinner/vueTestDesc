@@ -4,7 +4,12 @@
 
 <script>
 export default {
-  props:['placeholder']
+  props:{
+    placeholder: {
+      type:String,
+      default:''
+    }
+  }
 }
 </script>
 

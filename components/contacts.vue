@@ -1,6 +1,6 @@
 <template>
   <div class="contacts flex_column wrapper_component">
-    <title-component :title="title"/>
+    <titleComponent :title="title"/>
     <div class="contacts__content">
       <div class="contacts__content__text flex_column">
         <h6 class="contacts__content__title text_style">For all Library inquiries:</h6>
@@ -24,7 +24,10 @@
 </template>
 
 <script>
+import TitleComponent from "@/components/titleComponent.vue";
+
 export default {
+  components: {TitleComponent},
   data() {
     return {
       title:'Our Contacts'

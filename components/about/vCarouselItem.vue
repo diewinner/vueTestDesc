@@ -6,7 +6,16 @@
 
 <script>
 export default {
-  props: ['src', 'name']
+  props: {
+    src: {
+      type:String,
+      default: '',
+    },
+    alt: {
+      type:String,
+      default: '',
+    },
+  }
 }
 </script>
 

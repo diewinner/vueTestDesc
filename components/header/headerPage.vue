@@ -5,7 +5,7 @@
     </div>
     <div class="btns">
       <nav class="nav_container">
-        <nav-item :key="item" :text="item" v-for="item in arr" class="nav_item">{{ item }}</nav-item>
+        <navItem :key="item" :text="item" v-for="item in arr" class="nav_item">{{ item }}</navItem>
       </nav>
       <div class="svg">
         <profileSvg/>
@@ -15,9 +15,11 @@
 </template>
 
 <script>
-
+import ProfileSvg from "@/components/icons/profileSvg.vue";
+import NavItem from "@/components/header/navItem.vue";
 
 export default {
+  components: {NavItem, ProfileSvg},
   data() {
     return {
       arr: ['About', 'Favorites', 'Coffee shop', 'Contacts', 'Library Card']
@@ -64,8 +66,9 @@ export default {
   line-height: 50px;
   cursor: pointer;
   transition: all .2s ease;
+
   &:hover {
-    color:#BB945F;
+    color: #BB945F;
   }
 }
 </style>

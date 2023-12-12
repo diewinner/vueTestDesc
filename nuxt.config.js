@@ -32,17 +32,6 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: ['~/components',
-    {path: '~/components/header', extensions: ['vue']},
-    {path: '~/components/about', extensions: ['vue']},
-    {path: '~/components/favorites', extensions: ['vue']},
-    {path: '~/components/coffeeShop', extensions: ['vue']},
-    {path: '~/components/libraryCards', extensions: ['vue']},
-    {path: '~/components/modals', extensions: ['vue']},
-    {path: '~/components/icons', extensions: ['vue']},
-  ],
-
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [],
 

@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  props:['subtitle']
+  props:{
+    subtitle: {
+      type:String,
+      default:''
+    }
+  }
 }
 </script>
 

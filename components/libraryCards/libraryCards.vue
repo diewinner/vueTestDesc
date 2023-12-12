@@ -1,23 +1,27 @@
 <template>
   <div class="library-cards wrapper_component flex_column">
-    <title-component :title="title"/>
+    <titleComponent :title="title"/>
     <div class="library-cards__content">
       <div class="library-cards__content__form_container flex_column">
         <div class="library-cards__content__title">Find your Library card</div>
-        <v-check-form :title="formTitle" :subtitle="formSubTitle"/>
+        <vCheckForm  :subtitle="formSubTitle"/>
       </div>
-      <not-auth-text/>
+      <notAuthText/>
     </div>
   </div>
 </template>
 
 <script>
 
+import TitleComponent from "@/components/titleComponent.vue";
+import VCheckForm from "@/components/libraryCards/vCheckForm.vue";
+import NotAuthText from "@/components/libraryCards/notAuthText.vue";
+
 export default {
+  components: {NotAuthText, VCheckForm, TitleComponent},
   data() {
     return {
       title: 'Digital Library Cards',
-      formTitle: 'Find your Library card',
       formSubTitle: 'Brooklyn Public Library',
     }
   }

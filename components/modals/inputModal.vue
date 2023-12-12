@@ -7,7 +7,16 @@
 
 <script>
 export default {
-  props: ['input', 'nameInput']
+  props: {
+    input: {
+      type: String,
+      default: ''
+    },
+    nameInput: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 
@@ -16,6 +25,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
   & label {
     color: #000;
     font-family: "Inter", sans-serif;
@@ -23,6 +33,7 @@ export default {
     line-height: 20px;
     letter-spacing: 0.3px;
   }
+
   & input {
     border: 1px solid #BB945F;
     padding: 2px 0;

@@ -1,11 +1,14 @@
 <template>
   <div class="content">
-    <content-coffee-shop-item v-for="item in content" :key="item.id" :item="item"/>
+    <contentCoffeeShopItem v-for="item in content" :key="item?.id" :item="item"/>
   </div>
 </template>
 
 <script>
+import ContentCoffeeShopItem from "@/components/coffeeShop/contentCoffeeShopItem.vue";
+
 export default {
+  components: {ContentCoffeeShopItem},
   data() {
     return {
       content: [

@@ -1,13 +1,18 @@
 <template>
   <div class="coffee-shop wrapper_component">
-    <title-component :title="title"/>
-    <sub-title-component :subtitle="subtitle" class="margin_component"/>
-    <content-coffee-shop/>
+    <titleComponent :title="title"/>
+    <subTitleComponent :subtitle="subtitle" class="margin_component"/>
+    <contentCoffeeShop/>
   </div>
 </template>
 
 <script>
+import TitleComponent from "@/components/titleComponent.vue";
+import SubTitleComponent from "@/components/subTitleComponent.vue";
+import ContentCoffeeShop from "@/components/coffeeShop/contentCoffeeShop.vue";
+
 export default {
+  components: {ContentCoffeeShop, SubTitleComponent, TitleComponent},
   data() {
     return {
       title:'Coffee Shop',

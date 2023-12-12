@@ -2,20 +2,35 @@
   <div class="inputs_checked">
     <span class="inputs_checked__text">Pick favorites of season</span>
     <div class="inputs_container">
-      <input-checked-item v-for="(input, index) in inputs"
-                          :key="input.id"
-                          :id="input.id"
-                          :value="input.value"
-                          :nameInput="nameInput"
+      <inputCheckedItem v-for="(input, index) in inputs"
+                          :key="input?.id"
+                          :id="input?.id"
+                          :value="input?.value"
                           :index="index"
+                          @toggle="toggleInput"
       />
     </div>
   </div>
 </template>
 
 <script>
+import InputCheckedItem from "@/components/favorites/inputCheckedItem.vue";
+
 export default {
-  props: ['inputs', 'nameInput']
+  components: {InputCheckedItem},
+  props: {
+    inputs: {
+      type:Array,
+      default: () => []
+    },
+  },
+
+  methods: {
+    toggleInput(isChecked, idx) {
+      this.$emit('toggleInputCheck', isChecked, idx)
+      console.log(idx)
+    }
+  }
 }
 </script>
 

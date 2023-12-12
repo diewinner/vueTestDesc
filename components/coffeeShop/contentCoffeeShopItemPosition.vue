@@ -8,7 +8,16 @@
 
 <script>
 export default {
-  props:['pos','price']
+  props:{
+    pos: {
+      type:String,
+      default: ''
+    },
+    price: {
+      type:String,
+      default: ''
+    },
+  }
 }
 </script>
 

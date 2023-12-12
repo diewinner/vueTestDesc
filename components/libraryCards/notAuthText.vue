@@ -3,13 +3,16 @@
     <div class="notAuth__title">Get a reader card</div>
     <div class="notAuth__description">You will be able to see a reader card after logging into account or you can register a new account</div>
     <div class="notAuth__btns_container">
-      <v-button v-for="btn in btns" :text="btn" class="notAuth__btns_container__btn"/>
+      <vButton v-for="btn in btns" :text="btn" class="notAuth__btns_container__btn"/>
     </div>
   </div>
 </template>
 
 <script>
+import VButton from "@/components/vButton.vue";
+
 export default {
+  components: {VButton},
   data() {
     return {
       btns:['Sign Up', 'Log In'],
